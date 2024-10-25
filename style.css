@@ -12,17 +12,25 @@ h2 {
     margin: 8px;
     font-size: 32px;
 }
+p {
+    margin: 18px 8px 18px 8px;
+    font-size: 18px;
+    line-height: 28px;
+}
+a {
+    font-size: 16px;
+}
 img.LogoAfec {
-    height: 90%;
+    height: 100%;
 }
 img.TitleShape {
     display: block;
-    margin: auto;
-    width: 50px;
+    margin: 8px;
+    width: 40px;
 }
 img.IconSmall {
     height: 24px;
-    margin: 8px;
+    margin: 8px 8px 8px 0px;
     filter: invert(99%) sepia(96%) saturate(21%) hue-rotate(210deg) brightness(104%) contrast(100%);
 }
 
@@ -46,9 +54,37 @@ main {
     margin-bottom: 100px;
 }
 
+#StickyHeader {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 0px 0px 0px 100px;
+    box-shadow: 0px 5px 5px #0e0e3925;
+    width: 100%;
+    padding: 16px;
+}
+#StickyHeader > .TopHeader div:nth-child(3) button{
+    background-color: #FFFFFF;
+    color:#365DA4;
+    border: 1px solid #AEBEDA
+}
+#StickyHeader a {
+    color: #323245;
+    text-decoration: none;
+}
+
 #HeaderDiv {
+    position:relative;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
     background-image: url(./Images/AdobeStock_149561720_Banniere-1920x873.jpg);
-    border-radius: 0px 0px 0px 50px;
+    border-radius: 0px 0px 0px 100px;
     overflow: hidden;
     width: 100%;
     margin-bottom: 50px;
@@ -71,7 +107,7 @@ header a {
     justify-content: space-between;
     align-items: center;
     width: 1200px;
-    height: 80px;
+    height: 65px;
 }
 .TopHeader div{
     display: flex;
@@ -91,13 +127,15 @@ header a {
 }
 .TopHeader div:nth-child(3) button{
     border-radius: 4px;
-    background-color: #00000000;
     font-size: 12px;
-    color:white;
     font-weight: bold;
-    border: 1px solid white;
-    height: 50px;
-    width: 180px;
+    height: 40px;
+    width: 160px;
+}
+header > .TopHeader div:nth-child(3) button{
+    background-color: #00000000;
+    color:white;
+    border: 1px solid white
 }
 
 nav {
@@ -107,7 +145,7 @@ nav {
     color: white;
 }
 
-#ResultsTitle h2{
+#ResultsTitle{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -160,13 +198,13 @@ nav {
     grid-template-columns: 1fr 1fr 1fr;
     margin: auto;
     margin-top: 32px;
-    width: 75%;
+    width: 1200px;
 }
 
 .ResultCard {
-    width: 350px;
-    height: 400px;    
-    border-radius: 4px 4px 4px 30px;
+    width: 370px;
+    height: 420px;    
+    border-radius: 4px 4px 4px 50px;
     margin: 16px auto 16px auto;
     overflow: hidden;
     position: relative;
@@ -176,6 +214,9 @@ nav {
     height: 100%;
     object-fit: cover;
     filter: brightness(70%);
+}
+.ResultCard:hover {
+    cursor: pointer;
 }
 .ResultCard > div{
     position: absolute;
@@ -189,7 +230,33 @@ nav {
 
     color: white;
     padding: 25px;
+    
+    transition: bottom 0.3s ease-in;
 }
+.ResultCard:hover > div{
+    bottom: 40px;
+}
+.ResultCard h4 {
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+    margin: 0px;
+    margin-bottom: 8px;
+}
+.ResultCard > span {
+    position: absolute;
+    bottom: 30px;
+    left: 25px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+}
+.ResultCard:hover > span {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
 .ResultCard div span:nth-child(1) {
     background-color: #f0a55a;
     color: white;
@@ -198,13 +265,7 @@ nav {
     font-size: 12px;
     padding: 8px;
     margin-bottom: 4px;
-}
-.ResultCard h4 {
-    font-weight: bold;
-    color: white;
-    font-size: 20px;
-    margin: 0px;
-    margin-bottom: 8px;
+    
 }
 .ResultCard div span:nth-child(2) {
     color: white;
@@ -213,6 +274,12 @@ nav {
     align-items: center;
 }
 .ResultCard div span:nth-child(3) {
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+.ResultCard div span:nth-child(4) {
     color: white;
     font-size: 20px;
     display: flex;
@@ -249,8 +316,8 @@ nav {
 #WindowFormations {
     display: block;
     border-radius: 0 0 0 50px;
-    width: 800px;
-    padding: 40px;
+    width: 700px;
+    padding: 30px 60px 30px 60px;
     background-color: white;
 
     margin: 50px 150px 50px auto;
