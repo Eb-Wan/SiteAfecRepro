@@ -28,10 +28,28 @@ img.TitleShape {
     margin: 8px;
     width: 40px;
 }
+img.Icon {
+    height: 32px;
+    margin: 8px 8px 8px 0px;
+    filter: invert(99%) sepia(96%) saturate(21%) hue-rotate(210deg) brightness(104%) contrast(100%);
+}
 img.IconSmall {
     height: 24px;
     margin: 8px 8px 8px 0px;
     filter: invert(99%) sepia(96%) saturate(21%) hue-rotate(210deg) brightness(104%) contrast(100%);
+}
+input {
+    color: #323245;
+}
+::placeholder {
+    color: #323245;
+    font-size: 12px;
+    opacity: 1;
+}
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 body {
@@ -161,6 +179,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 20px;
 }
 #HeaderSearchWindow > div:nth-child(1) button {
     background-color: white;
@@ -177,20 +196,24 @@ nav {
 }
 #HeaderSearchWindow input {
     flex: 1;
-    height: 40px;
+    height: 50px;
+    font-size: 16px;
     border-radius: 4px 0 0 4px;
     border: 1px #365DA4 solid;
     padding: 10px;
 }
 #HeaderSearchWindow > div:nth-child(2) button {
-    width: 150px;
-    height: 40px;
+    width: 200px;
+    height: 50px;
     border-radius: 0px 4px 4px 0;
     border: 1px #365DA4 solid;
     background-color: #365DA4;
     color: white;
     font-size: 16px;
     font-weight: bold;
+}
+#HeaderSearchWindow > div:nth-child(2) button img {
+    height: 14px;
 }
 
 #Results {
@@ -320,5 +343,109 @@ nav {
     padding: 30px 60px 30px 60px;
     background-color: white;
 
-    margin: 50px 150px 50px auto;
+    margin: 50px 150px 100px auto;
 }
+
+#Counter {
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    padding-top: 100px;
+}
+#Counter > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 80px;
+}
+#Counter > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 80px;
+    counter-reset: compteurCSS;
+   
+}
+
+@property --num {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+}
+#Counter > div > span:nth-child(1) {
+    font-size: 50px;
+    font-weight: bolder;
+    color:#365DA4;
+    margin-bottom: 15px;
+
+    counter-reset: num var(--num);
+
+    transition: --num 5s ease-in-out;
+}
+#Counter > div > span:nth-child(1)::after {
+    content: counter(num);
+}
+#Counter:hover #CompteurCentres{
+    --num: 24;
+}
+#Counter:hover #CompteurRecommandation{
+    --num: 90;
+}
+#Counter:hover #CompteurCertification{
+    --num: 90;
+}
+#Counter:hover #CompteurExperience{
+    --num: 45;
+}
+#Counter > div > span:nth-child(2) {
+    font-size: 18px;
+    text-align: center;
+    width: 150px;
+}
+
+
+footer {
+    background-color: white;
+}
+footer > div{
+    display: flex;
+    color: white;
+    justify-content: center;
+    background-color: #00163D;
+    border-radius: 0 200px 0 0;
+    padding: 20px;
+}
+.FooterColumn {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+.FooterColumn button {
+    background-color: white;
+    border: none;
+    color: #365DA4;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 40px;
+}
+.FooterColumn > img {
+    height: 150px;
+}
+.FooterColumn > * {
+    margin: 10px;
+}
+.FooterTitle {
+    font-weight: bold;
+    font-size: 18px;
+}
+.FooterLink {
+    color:white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.FooterColumn:nth-child(1) a{
+    font-size: 18px;
+ }
